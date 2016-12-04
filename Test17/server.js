@@ -118,7 +118,8 @@ app.post('/addUser',urlencodedParser,function (req,res) {
 })
 
 
-var server = app.listen(8888,function () {
+var server = app.listen(8080,function () {
 	var host = server.address().address
-	console.log('test running on http://'+host)
+	var port = server.address().port
+	console.log('test running on http://'+host+":"+port)
 })
