@@ -89,13 +89,13 @@ app.post('/addUser',urlencodedParser,function (req,res) {
 	var json = JSON.parse(lines)
 	jsonLenght = getJsonLenth(json)
 
-	var title = "user"+(jsonLenght+1)
+	var title = "user"+(jsonLenght+2)
 	var user = {}
 	user[title] = {}
 	user[title].name = req.body.userName
 	user[title].password = req.body.password
 	user[title].profession = req.body.profession
-	user[title].id = jsonLenght + 1
+	user[title].id = jsonLenght + 2
 
 	fs.readFile(__dirname+'/users.json','utf8',function (err,data) {
 		data = JSON.parse(data)
